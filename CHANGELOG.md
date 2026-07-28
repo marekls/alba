@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Traits are now applied once per resource class instead of once per serialized object, making an attribute in a trait cost the same as one declared inline
   - A trait body is evaluated once per trait combination and the result is memoized, so side effects or runtime conditionals in a trait body no longer run on every serialization
   - `transform_keys` inside a trait now applies to the whole output of the resource serialized with that trait, not only to the keys the trait defines
+- The class backing a nested attribute is now built once instead of once per serialized object, so a nested attribute body is evaluated once however many objects are serialized
 
 ## 3.11.0 2026-07-25
 
